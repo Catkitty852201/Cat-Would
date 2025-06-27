@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Balance Screen</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      background-color: #fff;
+    }
+
+    .overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      z-index: 10;
+    }
+
+    .overlay.show {
+      opacity: 1;
+    }
+
+    .clickable {
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+    }
+
+    .clickable img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="clickable" id="clickArea">
+    <img src="6264754571029103994.png" alt="Balance Screenshot" />
+  </div>
+  <div class="overlay" id="overlay"></div>
+
+  <script>
+    const clickArea = document.getElementById("clickArea");
+    const overlay = document.getElementById("overlay");
+
+    clickArea.addEventListener("click", function () {
+      overlay.classList.add("show");
+
+      setTimeout(() => {
+        window.location.href = "history payment.html";
+      }, 600);
+    });
+  </script>
+</body>
+</html>
